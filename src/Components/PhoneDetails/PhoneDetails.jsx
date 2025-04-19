@@ -5,6 +5,7 @@ import { MdFavorite } from "react-icons/md";
 import SharedButton from "../SharedButton/SharedButton";
 import { setPhonesToLocalStorage } from "../../Utilities/StorePhone";
 
+
 const PhoneDetails = () => {
   const phones = useLoaderData();
 
@@ -19,7 +20,6 @@ const PhoneDetails = () => {
 
     const handleCart = () => {
         setPhonesToLocalStorage(id)
-        console.log("button click")
     }
 
   return (

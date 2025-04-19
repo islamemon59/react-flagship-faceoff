@@ -1,3 +1,5 @@
+import toast from "react-hot-toast"
+
 const getPhonesToLocalStorage = () => {
     const getStorePhones = localStorage.getItem("cart")
     if(getStorePhones){
@@ -11,11 +13,12 @@ const getPhonesToLocalStorage = () => {
 const setPhonesToLocalStorage = (id) => {
     const cart = getPhonesToLocalStorage()
     if(cart.includes(id)){
-        alert("id already exist")
+        toast.error("Already Added")
     } else {
         cart.push(id)
         const convertedCart = JSON.stringify(cart)
         localStorage.setItem("cart", convertedCart)
+        toast.success("Successfully Added")
     }
 }
 

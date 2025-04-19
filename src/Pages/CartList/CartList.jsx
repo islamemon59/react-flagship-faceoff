@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router";
+import toast from 'react-hot-toast';
 import {
   getPhonesToLocalStorage,
   removePhonesToLocalStorage,
@@ -27,7 +28,8 @@ const CartList = () => {
     const cartId = getPhonesToLocalStorage();
     const remainingCart = data.filter((phone) => cartId.includes(phone.id));
     setPhones(remainingCart);
-  };
+    toast.success('You removed one item!')
+};
 
   return (
     <div className="lg:py-10 md:py-8 py-6">
